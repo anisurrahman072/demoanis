@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewChild} from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
-import { Comment } from '../shared/Comment';
+import { Comment } from '../shared/comment';
 
 import {Params, ActivatedRoute } from '@angular/router'; /* ActivatedRoute service gives me permissopn to 
 access the URL that come from Menu Component || Params na use korew shob kisu kaj kortecilo*/
