@@ -1,0 +1,26 @@
+<div class="container"
+    fxLayout="column" fxLayoutGap="10px">
+
+    <div fxFlex>
+        <div>
+            <h1><b>Menu</b></h1>
+            <hr>
+        </div>
+    </div>
+
+    <div fxFlex *ngIf="dishes"> <!-- fxFlex represents a unique item of flex -->
+        <mat-grid-list cols="2" rowHeight="200px">
+            <mat-grid-tile *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]"> 
+<!-- uporer line ar moddhe  dish.id  ar value ami e DISHES ARRAY ar moddhe die dieci. Amr dewa value e 
+pass hocce dishdetail component a -->
+                <img height="200px" src="{{dish.image}}" alt=" {{dish.name}}">
+                <mat-grid-tile-footer> {{dish.name | uppercase}} </mat-grid-tile-footer>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+    <div [hidden]="dishes">
+        <mat-spinner></mat-spinner>
+        Loading....
+    </div>
+
+</div>
